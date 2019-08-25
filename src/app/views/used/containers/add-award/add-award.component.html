@@ -1,0 +1,11 @@
+<form
+  [formGroup]="badgeForm"
+  (ngSubmit)="onFormSubmit()">
+  <label>Name:</label>
+  <input
+    type="file"
+    formControlName="file"
+    (change)="onChange($event)">
+  <div id="output">...</div>
+  <button type="submit">Submit</button>
+</form>

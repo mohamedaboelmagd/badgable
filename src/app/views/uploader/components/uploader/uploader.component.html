@@ -1,0 +1,38 @@
+<div
+  drop
+  (hovered)="toggleHover($event)"
+  (dropped)="startUpload($event)"
+  class="upload"
+  [class.hovering]="isHovering">
+  <!-- {{imageUrl | json}} -->
+  <img
+    [src]="imageUrl"
+    alt="badgewell"
+    srcset
+    (error)="errorHandler($event)">
+  <div class="overlay"></div>
+
+  <button
+    type="button"
+    class="upload__button"
+    (click)="inputFile.click()">
+    <i class="la la-edit"></i>
+  </button>
+</div>
+
+<label class="file-label">
+  <input
+    #inputFile
+    class="file-input"
+    type="file"
+    (change)="startUpload($event.target.files)">
+</label>
+
+<div class="control__uploadHint">
+  <p class="control__uploadHint__title">
+    Upload hint
+  </p>
+  <p class="control__uploadHint__subtitle">
+    upload image
+  </p>
+</div>

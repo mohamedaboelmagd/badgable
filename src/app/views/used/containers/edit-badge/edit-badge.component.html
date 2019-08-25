@@ -1,0 +1,18 @@
+<p>
+  edit-badge works!
+</p>
+{{badge | json}}
+<form
+  [formGroup]="badgeForm"
+  (ngSubmit)="onFormSubmit()">
+  <app-uploader (imageEmitter)="changeImage($event)"></app-uploader>
+  <label>Name:</label>
+  <input
+    formControlName="name"
+    placeholder="Enter Name">
+  <label>Description:</label>
+  <textarea
+    formControlName="description"
+    placeholder="Enter Description"></textarea>
+  <button type="submit">Submit</button>
+</form>
